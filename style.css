@@ -16,7 +16,8 @@ body {
 Remember: Containers are the building blocks that give structure to your webpage! Use containers when: When you need to constrain content width, When creating card layouts, When building responsive designs,
 # symbol: Targets an HTML element with id                                                                                                        When you need consistent spacing, When grouping related elements */
 #container {
-    background-color: #fff;                                       /* #fff is shorthand for #ffffff (white). Sets the container's background to pure white */
+    /*Hexadecimal Color Codes typically consist of 6 digits (e.g., #RRGGBB) RR=Red, GG=Green, BB=Blue. #fff shortcut for #ffffff. Example: #000000 = No light (black).  #ffffff = Full light (white).
+    background-color: #fff;                                       /* #fff is a shorthand hexadecimal color code that represents the color white. #ffffff means MAX RED, GREEN, and BLUE light  */
     border-radius: 8px;                                              /*  Rounds all corners with an 8-pixel curve. Simpler: make the boxes to round corners. */
       /*   horizontal  vertical  blur  spread   color      Spread = Size adjustment for the shadow.   rgba(0, 0, 0, 0.3) → Shadow color (black with 0.3 = 30% opacity (70% transparent, 30% visible). Opacity means nontransparency, the lower the opacity the more transparent an element */
     box-shadow: 0px    10px     15px   10px    rgba(0, 0, 0, 0.3);         /* 0px: Horizontal offset (none). 10px: Vertical offset (drops shadow downward). 15px: Blur radius (soft shadow edges). 10px: Spread (extends shadow size). rgba(0,0,0,0.3): Black color with 30% opacity.*/
