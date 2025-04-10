@@ -1,0 +1,251 @@
+/* Global Styles known as (body) = Imagine you're setting up a new house (your webpage). The <body> in CSS is like setting up the default lighting, wall color, and floor type for every room in that house.
+If you set body { color: blue; }, all text on your page will be blue unless you specifically style an element to be a different color. 
+Remember: Styles applied to the body are your starting point. You can always override them for specific elements later in your CSS. 
+Note: Default = Pre-Selected Choice     The word "default" in CSS means the automatic setting that comes already chosen for you */
+body {
+    font-family: 'Poppins', sans-serif;                       /* First tries to use 'Poppins' font. If Poppins isn't available, uses any sans-serif font as backup */
+    background-color: #8c53ff;                                /* Purple background. #8c53ff is a purple color (hex code).*/
+    margin: 0;                                           /*Removes all default spacing around the page edges. Browsers normally add ~8px margin around body. This "resets" it to zero for full-bleed designs */
+    display: flex;                                                  /* Activates Flexbox layout mode. Flex or flexbox is like a boxes to display or add in website.*/
+    align-items: center;                                        /* Vertically or straight up centers all flex items. Works with display: flex. Centers content along the cross-axis (up/down) */
+    justify-content: center;                                       /* Horizontally centers all flex items. Horizontally means ike a person lying down straight or a straight line below. */
+    min-height: 100vh;                                    /* Sets minimum height of the page. vh = viewport height units. 100vh = 100% of the visible screen height. Ensures body is always at least as tall as the screen. */
+}
+
+/* A container in CSS is like a box that holds and organizes other elements on your webpage. It's one of the most fundamental concepts in web design.
+Remember: Containers are the building blocks that give structure to your webpage! Use containers when: When you need to constrain content width, When creating card layouts, When building responsive designs,
+# symbol: Targets an HTML element with id                                                                                                        When you need consistent spacing, When grouping related elements */
+#container {
+    background-color: #fff;                                       /* #fff is shorthand for #ffffff (white). Sets the container's background to pure white */
+    border-radius: 8px;                                              /*  Rounds all corners with an 8-pixel curve. Simpler: make the boxes to round corners. */
+      /*   horizontal  vertical  blur  spread   color      Spread = Size adjustment for the shadow.   rgba(0, 0, 0, 0.3) → Shadow color (black with 0.3 = 30% opacity (70% transparent, 30% visible). Opacity means nontransparency, the lower the opacity the more transparent an element */
+    box-shadow: 0px    10px     15px   10px    rgba(0, 0, 0, 0.3);         /* 0px: Horizontal offset (none). 10px: Vertical offset (drops shadow downward). 15px: Blur radius (soft shadow edges). 10px: Spread (extends shadow size). rgba(0,0,0,0.3): Black color with 30% opacity.*/
+    overflow: hidden;                                              /* Use overflow: hidden when you want to: 1. Keep rounded corners looking perfect  2. Hide anything that's too big for its container. It's like putting a lid or cover on a box - nothing can spill out! */
+    width: 900px;                                                    /*Sets fixed dimensions or measurements. Makes the element 900 pixels wide. */
+    height: 600px;                                                  /* Makes the element 600 pixels tall  */
+    padding: 20px;                                                /* Adds 20px inner spacing on all sides. Prevents content from touching container edges. Alternative: padding: 20px 30px; (vertical | horizontal) */
+    box-sizing: border-box;                                      /* Includes padding/border in width/height calculations. Without this, adding padding would make container wider than 900px */
+    overflow-y: scroll;                                              /*  Adds vertical scrollbar when content overflows. Scrollbar appears only when needed. Always visible if using overflow-y: scroll (vs auto) */
+    display: flex;                                                 /*  Activates Flexbox layout. All direct children become flex items.  Enables easy content alignment */
+    flex-direction: column;                                           /* Stacks children vertically (top-to-bottom). row (default): Left-to-right. column-reverse: Bottom-to-top. Visual effect: Creates a single-column layout */
+}
+
+/* list-header is the top section that controls or describes a list. Think of it like the "control panel" or "title bar" for a list of items. The # means it selects an HTML element with id="list-header". 
+Imagine a to-do list app:
+[LIST HEADER]
++-----------------------------------+
+|  Search...    ＋ Add Item    ⋮ Menu |
++-----------------------------------+
+
+[LIST ITEMS]
+- Buy milk
+- Pay bills
+- Walk dog
+
+In this case: The top section with search, add button, and menu would be #list-header. The actual to-do items would be the list content below it. */
+#list-header {
+    display: flex;                                            /* What it does: Turns the element into a flex container. What changes: All direct children inside #list-header will now automatically line up side-by-side (like items in a toolbar) */
+    gap: 10px;                                                      /* What it does: Adds space between every child element. Puts exactly 10 pixels of space between each item */
+    margin-bottom: 10px;                                       /* What it does: Adds 10px empty space below the entire header. Creates visual separation between the header and whatever comes after it. */
+}
+
+/* A blankDiv is simply an empty <div> box used to create space or act as a placeholder in your webpage. Why use it? 1. To add gaps/spacing between elements (when margins/padding aren’t enough).
+2. To reserve space for dynamic content (loaded later via JavaScript).  3. To visually separate sections (e.g., a dashed line or colored block). 
+Think of it like an "empty box" used to push other elements apart. */
+.blankDiv {                                                   /*(Period): Indicates this targets a class named "blankDiv".  blankDiv (no period) would try to target a HTML tag called <blankDiv> (which doesn't exist). Without Period = Different Meaning */
+    background-color: #fff;                                    /* background-color: Property that controls the element's background color. #fff: Hexadecimal color code for white,  Short for #ffffff (RRGGBB format) */
+    border: none;                                              /* border: Shorthand for all border properties. none: Explicitly removes: Ensures no visible border exists, overriding browser defaults */
+    padding: 20px;                                              /* padding: Space between content and border. 20px: Sets equal padding on all 4 sides: padding-top, padding-right, padding-buttom, padding-left, all is 20px */
+    border-radius: 8px;                                       /* Rounds corners with an 8-pixel curve radius. Affects all four corners equally. Visual math: Creates a quarter-circle with 8px radius at each corner */
+    height: 200px;                                               /* height: Sets vertical size */
+    width: 200px;                                                 /* width: Sets horizontal size */ 
+    display: flex;                                              /* Flexbox Properties: display: flex; Activates Flexbox Layout Model. Changes how child elements behave: Become flex items and Default to row direction */
+    justify-content: center;                                      /* Flexbox Properties: justify-content: center; Horizontal alignment (in this case).  Centers children along the main axis (left-to-right by default) */
+    align-items: center;                                         /* Flexbox Properties: align-items: center; Vertical alignment (in this case).   Centers children along the cross axis (top-to-bottom by default). */
+}
+
+/* addNoteDiv is typically a custom-named container element used in web development for creating "Add Note" functionality. */
+#addNoteDiv {                                                           /* # symbol: Targets an HTML element with id="addNoteDiv" */
+    background-color: #f9f9f9;                                    /* Sets a light gray background (hex color #f9f9f9) */
+    border: 1px solid #ddd;                                           /* Adds a 1-pixel solid border in light gray (#ddd). #ddd → Border color (light gray hex code, shorthand for #dddddd) */
+    padding: 20px;                                                 /* Adds 20px internal spacing between the border and content. Prevents content from touching the edges */
+    border-radius: 8px;                                           /* Rounds all corners with an 8-pixel curve. Softens the box's appearance for a modern look. */
+    height: 200px;                                                 /* Forces a fixed size of 200×200 pixels */
+    width: 200px;                                                    /* Creates a perfect square container, height together of width. */
+    cursor: pointer;                                                   /* Changes the mouse cursor to a hand (👆) icon when hovering. */
+    display: flex;                                                /*  Flexbox Properties: display: flex: Enables Flexbox layout for child elements */
+    justify-content: center;                                       /* Flexbox Properties: justify-content: center: Centers content horizontally */
+    align-items: center;                                            /* Flexbox Properties: align-items: center: Centers content vertically */
+}
+
+/* The #addNoteDiv:hover is a CSS pseudo-class that applies special styling when a user hovers or be suspended their mouse over the addNoteDiv element. */
+#addNoteDiv:hover {                                             /* #addNoteDiv: Targets the HTML element with id="addNoteDiv". :hover: A pseudo-class that activates when the mouse pointer is over the element */
+    transition: 0.25s;                                           /* What it does: Creates a smooth animation between normal and hover states. 0.25s: The duration of the transition (quarter of a second) */
+    background-color: #f1f1f1;                                /* Changes the background color to a slightly darker gray (#f1f1f1) on hover */
+}
+
+/* #addNoteDiv i is a selector that targets all <i> elements (commonly used for icons) that are located inside the element with id="addNoteDiv" */
+#addNoteDiv i {                                                 /* Targets: All <i> elements inside the element with id="addNoteDiv" */
+    font-size: 70px;                                             /* Effect: Makes the icon 70 pixels tall */
+    color: gainsboro;                                        /* Effect: Colors the icon light gray */
+}
+
+/* #list-container is a CSS ID selector that targets a specific HTML element designed to hold and organize list items. */
+#list-container {                                              /* Targets the HTML element with id="list-container" */
+    width: 100%;                                                  /* Sets its width to 100% of its parent container's width */
+}
+
+/* Why ul Doesn't Need #: It's not an ID or class - it's an HTML tag name. The browser already knows <ul> means "unordered list". */
+ul {
+    list-style-type: none;                          /* What it does: Removes bullet points from list items. Visual change:
+                                                                                                         Before: • Item 1    After: Item 1
+                                                                                                                 • Item 2           Item 2        */
+    padding: 0;                                       /* What it does: Eliminates all internal spacing. Removes: Browser's default left padding (typically 40px). It's important cause  it Gives  full control over positioning */
+    margin: 0;                                          /* What it does: Removes all external spacing. Removes: Default top/bottom margins browsers add. Result: List won't push other elements away. */
+    display: flex;                                    /* What it does: Activates Flexbox layout. Changes behavior: List items (<li>) line up horizontally (instead of vertical stack).
+                                                            Visual Change:
+                                                           (Before) Default:            (After)  Flex:
+                                                                    Item 1                       Item 1 Item 2 
+                                                                    Item 2                                                    */
+    flex-wrap: wrap;                                     /* What it does: Allows items to wrap to new lines. Without it: Items would shrink or overflow. */
+    gap: 10px;                                            /* What it does: Adds space between items */
+}
+
+/* li stands for "list item", an HTML element used to create items within ordered (<ol>) or unordered (<ul>) lists. It's one of the core list elements in HTML.
+Why No # Symbol? It's an HTML tag, not an ID.  # is only used for IDs (e.g., #header).  <li> is a native HTML tag like <div> or <p> */
+li {                                                               /* list-item */
+    background-color: #fff385;                                /* Bright yellow background */                        
+    padding: 20px;                                            /* Internal spacing on all sides. 20px padding ensures content doesn't touch edges */
+    border-radius: 8px;                                         /* Shape & Structure:  Soft rounded corners */
+    display: flex;                                             /* Flexbox Layout: Enables flexbox  */
+    flex-direction: column;                                     /* Flexbox Layout: Stacks children vertically */
+    align-items: center;                                      /* Flexbox Layout: Centers horizontally */
+    justify-content: space-between;                             /* Flexbox Layout:  Maximizes vertical space */
+    height: 200px;                                            /* Shape & Structure: Fixed height */
+    width: 200px;                                             /* Shape & Structure:  Fixed width (perfect square) */
+    box-shadow: 9px 9px 18px #b3b3b3,                        /* Visual Effects:  Bottom-right shadow */
+               -9px -9px 18px #ffffff;                           /*              Top-left highlight */
+    box-sizing: border-box;                                     /* ncludes padding in dimensions  or measurements */
+}
+
+/* This is a descendant selector that targets all <span> elements nested inside <i> elements. li means list-item. 
+The span literal definition: "To extend across or cover".
+Why No # Symbol? i = <i> HTML tag (often used for icons).  span = <span> HTML tag (inline container). # is only used for IDs (e.g., #header) */
+li span {                                                      /* Targets all <span> elements that are inside <li> (list item) elements. */
+    font-size: 12px;                                             /* Sets the text size to 12 pixels. Makes text smaller than default (typically 16px) */                        
+    flex-grow: 1;                                              /* Allows the span to expand and fill available space */
+    word-wrap: break-word;                                      /* Forces long words/URLs to break and wrap
+                                                                 Visual Example:  Before: Supercalifragilisticexpialidocious
+                                                                                  After:  Supercalifragilisticexpiali-
+                                                                                          docious                          */
+    overflow-y: hidden;                                       /* Hides vertical scrollbars. Clips content that exceeds height */
+    width: 100%;                                            /* Makes the span fill its container's width. Combined with flex-grow: 1 ensures full-width coverage */
+}
+
+/* li span:hover targets <span> elements inside <li> elements when hovered or be suspended. */
+li span:hover {                                           /* Targets <span> elements that are: Nested inside <li> elements. Currently being hovered over with the mouse */
+    overflow-y: auto;                                  /* Controls vertical overflow behavior. auto means: Scrollbar appears only when needed (if content exceeds height). No scrollbar shows if content fits */
+}
+
+/* The #noteBtns-container is a CSS ID selector that targets a specific HTML element with the attribute id="noteBtns-container". 
+Why It Has a # Symbol? # Indicates an ID Selector. #noteBtns-container targets one specific element with id="noteBtns-container". */
+#noteBtns-container {                                      /* Targets a specific container: he HTML element with id="noteBtns-container" */
+    display: flex;                                  /* Turns the container into a flexbox layout. Automatically makes all direct children flex items. Children will line up in a row by default (left to right) */
+    gap: 5px;                                             /* Adds 5 pixels of space between each child element */ 
+}
+
+/* These are CSS ID selectors that target specific button elements in HTML: 1. #editBtn → Selects the element with id="editBtn" 2. #deleteBtn → Selects the element with id="deleteBtn".
+Why Are They Listed Together in CSS? To apply the same styles to both buttons without repeating code. */
+#editBtn,                                                  /* Targets two buttons by their IDs: #editBtn → <button id="editBtn"> and.. */
+#deleteBtn {                                           /* #deleteBtn → <button id="deleteBtn">   Note: Comma (,): Means "apply these styles to both buttons"  */
+    background-color: #c6aaff;                          /* Sets a light purple background (#c6aaff) */
+    color: #fff;                                        /* Makes button text white (#fff = pure white) */
+    border: none;                                       /* Removes the default button border. Creates a flat, modern look */
+    padding: 5px 10px;                                  /* Adds 5px space above/below text. Adds 10px space left/right of text. Prevents text from touching edges */
+    cursor: pointer;                                       /* Changes mouse to a 👆 hand icon on hover. Signals to users that the buttons are clickable */
+    border-radius: 4px;                                 /* Softens edges with a 4px curve. More modern than sharp corners */
+    font-size: 12px;                                      /* Sets text to 12 pixels (smaller than default) */
+    width: 60px;                                            /* Forces both buttons to be 60px wide */
+}
+
+/* #editBtn is a CSS ID selector that targets a single, specific HTML element with the attribute id="editBtn". 
+Purpose: Used to style or manipulate a specific button (usually an "Edit" action button). Overrides default button styles. */
+#editBtn {                                                        /* Targets the HTML element with id="editBtn". */
+    background-color: gainsboro;                       /* Sets the button's background to a built-in CSS color named gainsboro (hex value: #DCDCDC). lightgray (slightly lighter) */
+}
+
+/* #deleteBtn:hover is a CSS pseudo-class selector that applies styles to the element with id="deleteBtn" when the user hovers over it with their mouse. */
+#deleteBtn:hover {                                      /* Targets the HTML element with id="deleteBtn" (typically a "Delete" button). */
+    background-color: #8c53ff;                      /* Changes the button's background to a vibrant purple (hex code #8c53ff) on hover. */
+}
+
+/* #editBtn:hover is a CSS pseudo-class selector that styles the element with id="editBtn" only when the user hovers over it with their mouse. 
+This part of code makes the Edit button turn gray when you move your mouse over it.*/
+#editBtn:hover {                                               /* #editBtn - Targets the button with ID "editBtn" */
+    background-color: gray;                                /* Changes button color to standard gray */
+}
+
+/* Two separate boxes on a webpage: #popupContainer: A popup/modal (e.g., "Are you sure?" dialog). #editing-container: An editor area (e.g., text input box).
+Why group them? To share the same styling rules (like size, position, colors) without repeating code.
+Think of it like giving two people (Person A and Person B) the same shirt (shared style), but different pants (unique styles). */
+#popupContainer,                                                 /* Targets two elements   Comma (,) = Applies the same styles to both */        
+#editing-container {                                         
+    position: fixed;                                        /* Positioning & Centering: Sticks the container to the screen (won't move when scrolling) */
+    top: 50%;                                                 /* Positions the container's top-left corner at the screen center */
+    left: 50%;                                               /* left: 50% tells the popup: "Start from the middle of the screen." */
+    transform: translate(-50%, -50%);                         /* Shifts the container back by 50% of its own size → Perfect centering */
+    width: 400px;                                          /*  Dimensions & Frame: Sets a fixed size (400px wide × 300px tall) */
+    height: 300px;
+    background-color: white;                              /* White background */
+    border: 1px solid #ccc;                              /* This line adds a thin, light gray border around the container. #ccc	Border color: light gray */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);              /* 0 0 = Shadow centered behind the box  10px = How "soft" the shadow edges are.   rgba(0,0,0,0.1) = Light gray/transparent shadow */
+    padding: 20px;                                         /* 20px internal spacing (inside the border) */
+    border-radius: 8px;                                      /* Slightly rounded corners (8px curve) */
+    display: flex;                                         /* Content Layout (Flexbox): Enables Flexbox for child elements */
+    flex-direction: column;                                    /* Stacks children vertically (top-to-bottom) */
+    text-align: center;                                     /* Centers text horizontally */
+    align-items: center;                                      /* Centers children horizontally (cross-axis) */
+    justify-content: center;                                /* Centers children vertically (main axis) */
+    z-index: 1000;                                       /* Ensures the container appears above other page elements */
+}
+
+/* A <textarea> is an HTML form element used for multi-line text input. It allows users to type or paste longer text (like comments, messages, or code). */
+textarea {
+    width: 300px;                                        /* Fixed Dimensions: 300 pixels wide, 200 pixels tall */
+    height: 200px;
+    margin: 10px 0;                                    /* Spacing: 10px space above/below (no left/right margin) */
+    padding: 10px;                                       /* Spacing: 10px inner spacing (between border and text) */
+    box-sizing: border-box;                             /*Includes padding/border in the width/height (prevents overflow) */
+    border-radius: 4px;                                 /* Slightly rounded corners */
+    border: 2px solid #8c53ff;                         /*  Border & Shape:  Purple border (2px thick) */
+    resize: none;                                          /* Disables the resize handle (user can't drag to change size) */
+}
+
+/* #btn-container is a CSS ID selector that targets an HTML element with the attribute id="btn-container". It's typically used to style or manage a group of buttons (like a button toolbar or action panel). */
+#btn-container {                                      /* Targets the HTML element with id="btn-container". (e.g., <div id="btn-container">...</div>) */
+    display: flex;                                   /* Turns the container into a flexbox layout. Automatically arranges all direct children (like buttons) in a horizontal row */
+    gap: 10px;                                        /* Adds 10 pixels of space between every child element */
+}
+
+/* #submitBtn and #closeBtn are CSS ID selectors that target specific buttons: 
+1. #submitBtn: Styles the Submit/Save button (<button id="submitBtn">).
+2. #closeBtn: Styles the Close/Cancel button (<button id="closeBtn">).  */
+#submitBtn, #closeBtn {
+    width: 100px;                                      /* Sets both buttons to 100 pixels wide. */
+    color: #fff;                                      /* Makes the button text white. */
+    font-size: 14px;                                   /* Sets the text size to 14 pixels. */
+    border: none;                                    /* Sets the text size to 14 pixels. */
+    border-radius: 5px;                                /* Rounds the button corners slightly (5px curve). */
+    padding: 10px;                                    /* Adds 10 pixels of inner spacing (between text and button edges). */
+    cursor: pointer;                                 /* Changes the mouse cursor to a hand (👆) on hover (signals clickability). */
+}
+
+/* #submitBtn is a CSS ID selector that targets a single, specific button in your HTML with the attribute id="submitBtn". */
+#submitBtn {                                             /* Targets the unique HTML element with id="submitBtn" (e.g., a "Submit" button). */
+    background-color: #8c53ff;                     /* Changes the button's background to purple (hex color code #8c53ff). */
+}
+
+/* #closeBtn is a CSS ID selector that targets a single, specific button in your HTML with id="closeBtn". */
+#closeBtn {                                         /* Targets the one specific button in your HTML with id="closeBtn" */
+    background-color: gainsboro;                /* Sets its background color to gainsboro (a built-in CSS light gray color, hex value #DCDCDC) */
+}
