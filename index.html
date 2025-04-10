@@ -1,0 +1,33 @@
+<!DOCTYPE html>                            <!-- Tells the browser this is an HTML5 document-->
+<html lang="en">                               <!--The root element of the page, with language set to English-->
+<head>                                      <!-- Contains meta information about the document (not visible on the page), from open tag head to end tag head-->
+  <meta charset="UTF-8">                        <!--Ensures the browser understands special characters (like emojis, accents). Without this, your page might show weird symbols.-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">     <!--Makes the app look good on phones and tablets. Like telling a photo to "automatically resize to fit any frame."-->
+  <title>Modern Note Taking App</title>            <!--Sets the name shown in the browser tab.  Like the label on a file folder.-->
+  <link rel="stylesheet" href="./style.css">          <!--  Connects the CSS file (which adds colors, fonts, and styling). The rel attribute specifies the relationship between the current HTML file and the linked resource (like a CSS file).-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">     <!--is used to include Font Awesome icons in your HTML document(like the + button)..-->
+
+</head>
+
+<body>                                      <!-- Contains the actual content that users see-->
+    <div id="container">                       <!--<div> is short for "division", Think of it as a box that you can use to group other elements together for styling or organization purposes. 
+                                            The id attribute in HTML is like giving a unique name or label to a specific element on your webpage.Just like each person has a unique ID number. A container is like a box that holds and organizes your content. It helps control the layout, spacing, and width of elements on a webpage.-->
+        <div id="list-header">                              <!--The title bar of an app. Imagine the top bar of a notes app (like Google Keep).-->                                    
+            <div id="addNoteDiv" onclick="popup()">   <!--<div id="addNoteDiv"> is A floating + button inside it. The + button lets you add a new note when clicked.  onclick="popup()" is Clicking it opens a new note popup. The popup() function would open a new note window.-->                
+                <i class="fa-solid fa-plus"></i>         <!--<i> Tag  stood for "italic", but now commonly used for icons. fa-solid → Specifies the icon style (solid, filled-in). fa-plus → Chooses the "plus" (+) icon from Font Awesome’s collection. Below is example how it works: -->                         
+            </div>                                 <!--How It Works: Font Awesome’s CSS/JS files (loaded in your HTML) replace <i class="fa-solid fa-plus"> with the actual + icon. No image files needed—it’s a vector icon (scales perfectly, loads fast).-->
+                                                      <!--The class after a <div> is like giving that div a label or category name that you can use to style it with CSS or target it with JavaScript. -->
+            <div class="blankDiv"></div>               <!--These are empty containers (invisible boxes) used for spacing, layout structure, or future content.-->
+            <div class="blankDiv"></div>        <!--Sometimes, empty <div>s are simpler for: Complex layouts (e.g., CSS Grid/Flex gaps).  Dynamic content (easier to target with JS). Legacy code (older frameworks used this method).-->
+        </div>                             <!--Why twice: The  <div class="blankDiv"></div> or  double blank divs are intentional spacers - one likely pushes content left, the other pushes right, creating balanced empty space in between. If you delete one, your layout might become lopsided or collapse unexpectedly-->
+        
+        <div id="list-container">         <!--This is the main box that holds all your notes. Acts like a "frame" to keep the notes list organized.  lets you style it with CSS or control it with JavaScript.-->             
+            <ul id="notes-list"></ul>       <!--This is an empty list (like a blank bullet-point list). <ul> = "unordered list" (defaults to bullet points, but you can style it differently). The id="notes-list" means JavaScript can find it to add notes dynamically later. dynamically means developing as a situation changes-->
+        </div>
+    </div>
+
+    <script src="./script.js"></script>                <!-- Connects the JavaScript file (which makes buttons work). The src attribute in a <script> tag specifies the external file path (usually JavaScript) that the browser should load and execute. -->
+                                                     <!--src is an abbreviation for "source" (the origin or location of a resource). -->
+</body>
+</html>
+ 
